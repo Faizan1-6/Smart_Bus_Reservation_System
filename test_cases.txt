@@ -1,0 +1,112 @@
+SMART BUS RESERVATION SYSTEM — MANUAL TEST CASES
+
+Instructions:
+Run `python main.py` and execute each scenario. Record the actual result from your run and mark Pass/Fail. Start a fresh run when a clean in-memory state is needed.
+
+TC-01 — View routes
+Action: Choose 1.
+Expected: Five sample routes appear with journey, departure time, fare, seats, and status.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-02 — Search city
+Action: Choose 2; search `hyderabad`.
+Expected: R101, R103, and R105 appear (routes departing from or arriving at Hyderabad).
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-03 — Unknown search
+Action: Choose 2; search `Atlantis`.
+Expected: Helpful no-route-found message; program returns to menu.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-04 — Valid booking
+Action: Choose 3; name Ahmed; age 24; route R101; seats 2.
+Expected: Booking B1001; total Rs. 2,400; R101 availability becomes 38/40.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-05 — Blank passenger name
+Action: Choose 3; enter spaces as passenger name.
+Expected: Booking rejected; no booking record or seat change.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-06 — Invalid age
+Action: Choose 3; enter a non-number, zero, or negative age.
+Expected: Non-number is rejected and asks again; zero/negative is rejected and asks again. No booking until a valid positive integer is provided.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-07 — Zero seats
+Action: Choose 3; provide valid name, age, route, and enter 0 seats.
+Expected: Zero is rejected and asks again; no booking until a positive quantity is provided.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-08 — Unknown route
+Action: Choose 3; use route ID `R999`.
+Expected: Booking rejected; no seat count changes.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-09 — More seats than available
+Action: Request more seats than remain on a route.
+Expected: Request rejected; availability does not become negative and no booking is created.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-10 — Cancel confirmed booking
+Action: Cancel a valid confirmed booking ID.
+Expected: Status changes to Cancelled and the correct seat count is restored.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-11 — Cancel the same booking twice
+Action: Enter the same booking ID again after cancellation.
+Expected: Already-cancelled message; no additional seats restored.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-12 — Booking report after cancellation
+Action: Generate report after booking and cancelling.
+Expected: Cancelled booking remains in total history and cancelled count, but its seats and fare are excluded from confirmed totals.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-13 — Seat availability filter
+Action: Choose 6 and then 2.
+Expected: Only routes with seats remaining are shown.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-14 — Route schedule
+Action: Choose 8.
+Expected: Routes are grouped by departure city; Lahore and Mirpur Khas show `No scheduled departures.`
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-15 — Invalid menu choice
+Action: Enter `abc` or `99`.
+Expected: Helpful error; program does not crash and shows menu again.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-16 — Empty report
+Action: Start a fresh program and choose 7 before booking.
+Expected: Booking totals, confirmed seats, and revenue are zero; fully booked routes are still counted from route availability.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-17 — Fill a route completely
+Action: In a fresh run, book exactly 40 seats on R101 using valid passenger details.
+Expected: Booking succeeds, R101 shows 0/40 and Fully Booked.
+Actual result: ______________________________
+Pass/Fail: __________
+
+TC-18 — Exit
+Action: Choose 9.
+Expected: Goodbye message and clean exit.
+Actual result: ______________________________
+Pass/Fail: __________
